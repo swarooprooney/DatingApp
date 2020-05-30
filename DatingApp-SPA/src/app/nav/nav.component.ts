@@ -24,9 +24,11 @@ export class NavComponent implements OnInit {
   login() {
     this.authService.login(this.model).subscribe(
       (next) => {
+        console.log(this.model);
         this.alertifyService.success('User succssfully logged in');
       },
       (error) => {
+        console.log(error);
         this.alertifyService.error(error);
       },
       () => {
@@ -43,6 +45,7 @@ export class NavComponent implements OnInit {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.authService.decodedToken = null;
+    console.log('cleared all the local storage');
     this.alertifyService.message('Logged out successfully');
     this.routerService.navigate(['/home']);
   }

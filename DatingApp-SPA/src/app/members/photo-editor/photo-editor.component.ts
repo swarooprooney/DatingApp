@@ -62,6 +62,11 @@ export class PhotoEditorComponent implements OnInit {
           description: res.description,
         };
         this.photos.push(photo);
+        if (photo.isMain) {
+         this.authservice.changeMemberPhoto(photo.url);
+         this.authservice.currentUser.photoUrl = photo.url;
+         localStorage.setItem('user', JSON.stringify(this.authservice.currentUser));
+        }
       }
     };
   }

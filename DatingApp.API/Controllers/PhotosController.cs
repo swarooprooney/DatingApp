@@ -68,7 +68,7 @@ namespace DatingApp.API.Controllers
                         Transformation = new Transformation().Width(500).
                         Height(500).Crop("fill").Gravity("face")
                     };
-                    uploadResult = _cloudinary.Upload(uploadParams);
+                    uploadResult = await _cloudinary.UploadAsync(uploadParams);
 
                 }
             }
