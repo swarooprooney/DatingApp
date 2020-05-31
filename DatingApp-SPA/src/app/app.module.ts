@@ -10,7 +10,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import { TimeagoModule } from 'ngx-timeago';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -71,7 +71,8 @@ export function tokenGetter(){
             blacklistedRoutes: ['localhost:5000/api/auth']
          }
       }),
-      BsDatepickerModule.forRoot()
+      BsDatepickerModule.forRoot(),
+      TimeagoModule.forRoot()
    ],
    providers: [
       AuthService,
